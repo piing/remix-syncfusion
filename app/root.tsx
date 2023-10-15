@@ -10,7 +10,14 @@ import {
 } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : [{ rel: "stylesheet", href: "https://cdn.syncfusion.com/ej2/material.css" }]),
+  ...(cssBundleHref
+    ? [{ rel: "stylesheet", href: cssBundleHref }]
+    : [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.syncfusion.com/ej2/material.css",
+        },
+      ]),
 ];
 
 export default function App() {
@@ -22,7 +29,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body id="root">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
