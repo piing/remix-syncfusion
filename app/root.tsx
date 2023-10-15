@@ -8,6 +8,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { registerLicense } from '@syncfusion/ej2-base';
+
+// Registering Syncfusion license key
+registerLicense('License Key');
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
